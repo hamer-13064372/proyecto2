@@ -10,13 +10,20 @@ class CreditoController extends Controller
 {
     //
 
-    public function store(request $request) {
+     public function index() {
+         $credito=Credito::all();
+         return ['cred' => $credito];
+     }
+
+
+    public function store(Request $request) {
         $credito= new Credito();
         $credito->total=$request->total;
-        $credito->cantidad=$recuest->cantidad;
-        $credito->estado=$recuest->edo;
+        $credito->cantidad=$request->cantidad;
+        $credito->estado=$request->edo;
 
         $credito->save();
+
 
 
     }

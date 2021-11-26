@@ -15,9 +15,11 @@ class CreateCreditosTable extends Migration
     {
         Schema::create('creditos', function (Blueprint $table) {
             $table->id();
-            $table->integer('total');
-            $table->integer('cantidad');
+            $table->integer('valor');
             $table->char('edo',1);
+             
+            $table->foreignId('id_clien')->constrained('clientes');
+            
             $table->timestamps();
         });
     }

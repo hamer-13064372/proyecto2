@@ -18,17 +18,13 @@ class CreateProductosTable extends Migration
             $table->string('cod_prod');
             $table->string('nombre',150);
             $table->integer('precio');
-            $table->string('tipo_serv');
-            $table->string('stock_min');
-            $table->string('stock_max');
-            $table->date('fec_venc');
-
             $table->integer('cant');
+            $table->string('tipo_serv');
+            $table->integer('stock');
+            $table->date('fec_venc');
             $table->char('edo',1);
 
-            $table->foreignId('id_obs')->constrained('obsequios');
-            $table->foreignId('id_cred')->constrained('creditos');
-
+           
 
             $table->timestamps();
         });

@@ -16,9 +16,10 @@ class CreateObsequiosTable extends Migration
         Schema::create('obsequios', function (Blueprint $table) {
             $table->id();
             $table->date('fecha');
-            $table->string('tipo_obs');
             $table->integer('valor_obs');
             $table->char('edo',1);
+            
+            $table->foreignId('id_prod')->constrained('productos');
             
             $table->timestamps();
         });
